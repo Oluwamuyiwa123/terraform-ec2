@@ -1,9 +1,9 @@
-provider "aws" {
-  region = var.aws_region
-}
+# provider "aws" {
+#   region = var.aws_region
+# }
 
 module "ec2_instance" {
-  source            = "./modules/ec2"
+  source            = "./ec2"
   ami_id            = var.ami_id
   instance_type     = var.instance_type
   subnet_id         = var.subnet_id
