@@ -33,7 +33,7 @@ resource "aws_subnet" "public" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "muyiwa-public-subnet"
+    Name = "muyiwa-subnet"
   }
 }
 
@@ -42,7 +42,7 @@ resource "aws_internet_gateway" "gw" {
   vpc_id = aws_vpc.main.id
 
   tags = {
-    Name = "muyiwa-main-igw"
+    Name = "muyiwa-igw-public"
   }
 }
 
@@ -56,7 +56,7 @@ resource "aws_route_table" "public" {
   }
 
   tags = {
-    Name = "muyiwa-public-rt"
+    Name = "muyi-rtw-public"
   }
 }
 
@@ -100,7 +100,7 @@ resource "aws_instance" "web" {
   security_groups = [aws_security_group.allow_ssh.id]
   
   # Key pair name (create this in AWS Console first)
-  key_name = "muyiwaa"
+  key_name = "tos"
 
   tags = {
     Name = "web-server"
