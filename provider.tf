@@ -11,7 +11,7 @@ terraform {
 
 # Provider configuration
 provider "aws" {
-  region = "eu-north-1"  
+  region = "us-west-2"  
 }
 
 # VPC
@@ -29,7 +29,7 @@ resource "aws_vpc" "main" {
 resource "aws_subnet" "public" {
   vpc_id            = aws_vpc.main.id
   cidr_block        = "10.0.1.0/24"
-  availability_zone = "eu-north-1a" 
+  availability_zone = "us-west-2b" 
   map_public_ip_on_launch = true
 
   tags = {
